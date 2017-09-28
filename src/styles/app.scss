@@ -1,0 +1,366 @@
+
+body{
+    margin: 0 auto;
+    background-color: #fefefe;
+    color: #333;
+
+
+.header {
+    border-bottom: 3px solid #888;
+    padding-bottom: 10px;
+    margin: 10px;
+    display: flex;
+    font-weight: bold;
+	color: #555;
+		ul {
+			display: flex	
+		};
+		li {
+			margin-right: 10px;
+			a{
+				cursor: pointer;
+				position: relative;
+				text-decoration: none;
+				padding : 0px 10px 0px 10px;
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 0%;
+					border-bottom: 2px solid #ccc;
+					transition: 0.4s;
+				}
+				&:hover:after {
+					width: 100%;
+				}
+			}
+
+		}
+  }
+
+  .row {
+    display: flex;
+    margin: 10px;
+  
+    .left {
+      display: flex;
+      flex: 1;
+      margin-left: 20px;
+    };
+    .middle {
+        display: flex;
+        flex: 2;
+    }
+    .right {
+      flex: 1;
+      margin-left: 20px;
+    }
+     
+}
+
+input {
+    padding-left: 5px;
+    min-height: 30px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 98%;
+    margin: 0px 10px 0px 20px;
+    box-sizing: border-box;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+  
+  th {
+    background-color: #41b883;
+    color: white;
+  }
+  
+
+
+
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1), 0 1px 5px 0 rgba(0,0,0,0.10);
+    min-width: 120px;
+    &:hover{
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24), 0 2px 5px 0 rgba(0, 0, 0, 0.19)
+    }
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+
+
+.multiselect__tags{
+    border-radius: 0px;
+        .multiselect__tag{
+            padding: 6px 26px 6px 10px;
+            border-radius: 2px;
+        }
+    }
+
+.button-text{
+    font-size: 14px;
+    font-weight: bold;
+    display: inline;
+    margin: 0px 10px;
+  }
+
+  ul{
+		list-style-type: none; 
+	}
+
+  #navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; 
+	} 
+ 
+#navbar ul li a{
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+	padding: .2em 1em; 
+	color: #333;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		border-bottom: 2px solid #ccc;
+		transition: 0.4s;
+	}
+	&:hover:after {
+		width: 100%;
+	}
+}
+ 
+ 
+#navbar ul li a:hover { 
+    color: #222;
+    cursor: pointer;
+	}
+
+
+
+
+
+
+/************************* LOADER ***************************************/
+
+#fountainTextG{
+	width:234px;
+	margin:auto;
+}
+
+.fountainTextG{
+	color:rgb(0,0,0);
+	font-family:Arial;
+	font-size:24px;
+	text-decoration:none;
+	font-weight:normal;
+	font-style:normal;
+	float:left;
+	animation-name:bounce_fountainTextG;
+		-o-animation-name:bounce_fountainTextG;
+		-ms-animation-name:bounce_fountainTextG;
+		-webkit-animation-name:bounce_fountainTextG;
+		-moz-animation-name:bounce_fountainTextG;
+	animation-duration:2.09s;
+		-o-animation-duration:2.09s;
+		-ms-animation-duration:2.09s;
+		-webkit-animation-duration:2.09s;
+		-moz-animation-duration:2.09s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	transform:scale(.5);
+		-o-transform:scale(.5);
+		-ms-transform:scale(.5);
+		-webkit-transform:scale(.5);
+		-moz-transform:scale(.5);
+}#fountainTextG_1{
+	animation-delay:0.75s;
+		-o-animation-delay:0.75s;
+		-ms-animation-delay:0.75s;
+		-webkit-animation-delay:0.75s;
+		-moz-animation-delay:0.75s;
+}
+#fountainTextG_2{
+	animation-delay:0.9s;
+		-o-animation-delay:0.9s;
+		-ms-animation-delay:0.9s;
+		-webkit-animation-delay:0.9s;
+		-moz-animation-delay:0.9s;
+}
+#fountainTextG_3{
+	animation-delay:1.05s;
+		-o-animation-delay:1.05s;
+		-ms-animation-delay:1.05s;
+		-webkit-animation-delay:1.05s;
+		-moz-animation-delay:1.05s;
+}
+#fountainTextG_4{
+	animation-delay:1.2s;
+		-o-animation-delay:1.2s;
+		-ms-animation-delay:1.2s;
+		-webkit-animation-delay:1.2s;
+		-moz-animation-delay:1.2s;
+}
+#fountainTextG_5{
+	animation-delay:1.35s;
+		-o-animation-delay:1.35s;
+		-ms-animation-delay:1.35s;
+		-webkit-animation-delay:1.35s;
+		-moz-animation-delay:1.35s;
+}
+#fountainTextG_6{
+	animation-delay:1.5s;
+		-o-animation-delay:1.5s;
+		-ms-animation-delay:1.5s;
+		-webkit-animation-delay:1.5s;
+		-moz-animation-delay:1.5s;
+}
+#fountainTextG_7{
+	animation-delay:1.64s;
+		-o-animation-delay:1.64s;
+		-ms-animation-delay:1.64s;
+		-webkit-animation-delay:1.64s;
+		-moz-animation-delay:1.64s;
+}
+
+
+
+
+@keyframes bounce_fountainTextG{
+	0%{
+		transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-o-keyframes bounce_fountainTextG{
+	0%{
+		-o-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-o-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-ms-keyframes bounce_fountainTextG{
+	0%{
+		-ms-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-ms-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-webkit-keyframes bounce_fountainTextG{
+	0%{
+		-webkit-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-webkit-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-moz-keyframes bounce_fountainTextG{
+	0%{
+		-moz-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-moz-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #EFEFE4;
+    z-index: 990;
+    opacity: 0.6;
+  }
+
+
+
+/************************* LOADER ***************************************/
+
+
+
+}
