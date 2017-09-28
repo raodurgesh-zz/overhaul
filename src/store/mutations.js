@@ -63,7 +63,8 @@ export const mutation = {
   },
   [LOGOUT](state) {
     setAuthToken('');
-    state.auth = { ...InitialState.auth }
+    state.auth = InitialState.auth 
+    state.app  =  InitialState.app 
   },
 
 

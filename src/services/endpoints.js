@@ -16,18 +16,19 @@ export const getUrl = (url) => {
 }
 
 
+export const setAuthToken = function (token) {
+  localStorage['token'] = token;
+}
 
 export const getAuthToken = function () {
-  return sessionStorage['token'];
+  return localStorage['token'];
 }
 
 export const getErrorResponse = (error)=>{
     return error.response ||{data :{ status : "error",errors : [{description :'error!'}] }}
 }
 
-export const setAuthToken = function (token) {
-   sessionStorage['token'] = token;
-}
+
 
 function updateRequestConfig(config){
     config.headers['X-Token'] = getAuthToken();
