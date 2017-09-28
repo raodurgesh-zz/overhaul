@@ -13,6 +13,12 @@
       <div style="margin-left:85px; margin-top:10px">
         <loader v-show ="showLoader" ></loader>
       </div>
+        <div class="error" v-for ="error in errors" :key ="error" >
+          {{error}}
+        </div>
+      <div  class="error" v-if ="loginError">
+        {{loginError}}
+      </div>
     </form>
   </div>
 </div>
@@ -34,19 +40,40 @@ export default {
   data() {
     return {
       creds: {
-        mob: "9899829220", // null,
-        pswd: '1@34567b'// null
-      }
+        mob:  '',
+        pswd: ''
+      },
+      errors:[]
     }
   },
   methods: {
+    validCredential() {
+      let isValid = true;
+
+      if (this.creds.mob.trim().length == 0) {
+        isValid = false;
+        this.errors.push("mobile number is required!");
+      }
+      if (this.creds.pswd.trim().length == 0) {
+        this.errors.push("password is required!");
+        isValid = false;
+      }
+
+      setTimeout(()=>{ this.errors =[] },5000);
+
+
+      return isValid;
+    },
     validate: function() {
+      this.errors = [];
+      if(!this.validCredential()) return;
       this.$store.dispatch("login", this.creds);
     }
   },
   computed:{
         ...mapGetters({ 
-        showLoader :'loginInProgress'
+        showLoader :'loginInProgress',
+        loginError :'loginError'
     })
     
   }
@@ -59,6 +86,10 @@ export default {
     width: 360px;
     padding: 8% 0 0;
     margin: auto;
+    .error {
+      color: #FF5722;
+     // text-align: left;
+    }
     .form {
         position: relative;
         z-index: 1;

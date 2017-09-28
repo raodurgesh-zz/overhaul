@@ -30,7 +30,6 @@ export const setAuthToken = function (token) {
 }
 
 function updateRequestConfig(config){
-  debugger;
     config.headers['X-Token'] = getAuthToken();
     config.data = {...config.data ,"tz":"Asia/Kolkata" , "et": Date.now()+'' }
     return config;

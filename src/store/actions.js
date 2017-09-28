@@ -13,7 +13,7 @@ const toastConfig = {
 
 
 export const login =  async({ commit },creds) => {
-  commit(type.LOGIN); 
+  commit(type.AUTH_PROGRESS, true); 
   let res = await service.loginService(creds);
     if(res.data.status != "error"){
       let token = res.data.result['X-Token'];
@@ -21,14 +21,18 @@ export const login =  async({ commit },creds) => {
         router.push({name:'contestList'});
         commit(type.LOGIN_SUCCESS,token );
     }else{
-      let msg = res.data.errors[0].description;
-      commit(type.FETCH_CONTEST_FAIL, msg);  
-      Vue.toast(msg, toastConfig);
+      let error = Array.isArray(res.data.errors) ? res.data.errors[0] : res.data.errors;
+      let msg = error && error.description;
+      commit(type.LOGIN_FAIL, msg);  
+     // Vue.toast(msg, toastConfig);
     }
+    commit(type.AUTH_PROGRESS, false); 
 }
 
 export const logout =  async({ commit },creds) => {
+  commit(type.AUTH_PROGRESS, true); 
   commit(type.LOGOUT); 
+  commit(type.AUTH_PROGRESS, false); 
 }
 
 
@@ -122,7 +126,7 @@ export const expireContest =  async({ commit },params) => {
 
 
 export const filter =  async({ commit },filter) => {
-  commit(type.CONTEST_PROGRESS , true);
+ // commit(type.CONTEST_PROGRESS , true);
   commit(type.CONTEST_FILTER , filter); 
-  commit(type.CONTEST_PROGRESS , false);
+ // commit(type.CONTEST_PROGRESS , false);
 }

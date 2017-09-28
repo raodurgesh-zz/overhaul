@@ -2,7 +2,7 @@
 
 import { setAuthToken } from '../services/endpoints'
 
-export const LOGIN = "LOGIN";
+export const AUTH_PROGRESS = "AUTH_PROGRESS";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
@@ -37,11 +37,12 @@ const InitialState = {
 export const mutation = {
 
   /***************** Auth  *****************************/
-  [LOGIN](state) {
+  [AUTH_PROGRESS](state, status) {
 
     state.auth = {
       ...state.auth,
-      inProgress: true
+      inProgress: status,
+      error : status ? false  : state.auth.error
     }
 
   },
@@ -49,7 +50,6 @@ export const mutation = {
 
     state.auth = {
       ...state.auth,
-      inProgress: false,
       isLoggedIn: true,
       token: token
     }
@@ -58,7 +58,6 @@ export const mutation = {
 
     state.auth = {
       ...state.auth,
-      inProgress: false,
       error: msg
     }
   },
@@ -78,6 +77,7 @@ export const mutation = {
     state.app = {
       ...state.app,
       inProgress: status,
+
     }
   },
 

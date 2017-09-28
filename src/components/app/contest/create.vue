@@ -38,7 +38,7 @@
       <div class="row">
         <div class="left">Participants</div>
         <div class="middle">
-          <multiselect class="multiselect__box width100" v-model="contest.participants" id="selectbox" label="name" track-by="id" placeholder="Type to search outlets" open-direction="bottom" :options="outlets" :multiple="true" :searchable="true" :loading="isLoading" :internal-search="false" :clear-on-select="true" :close-on-select="false" :options-limit="300" :hide-selected="true" :limit="100" :limit-text="limitText" :max-height="600" :show-no-results="showNoResult" @search-change="asyncFind">
+          <multiselect class="multiselect__box width100" v-model="contest.participants" id="selectbox" label="name"  track-by="id" placeholder="Type to search outlets" open-direction="bottom" :options="outlets" :multiple="true" :searchable="true" :loading="isLoading" :internal-search="false" :clear-on-select="true" :close-on-select="false" :options-limit="300" :hide-selected="true" :limit="100" :limit-text="limitText" :max-height="600" :show-no-results="showNoResult" @search-change="asyncFind">
             <template slot="clear" scope="props">
               <div class="multiselect__clear" v-if="selectedOutletsLength" @mousedown.prevent.stop="clearAll(props.search)"></div>
             </template>

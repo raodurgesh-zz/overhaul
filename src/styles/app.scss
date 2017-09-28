@@ -135,10 +135,13 @@ table {
 .multiselect__tags{
     border-radius: 0px;
         .multiselect__tag{
-            padding: 6px 26px 6px 10px;
+            padding: 6px 26px 6px 10px;	
             border-radius: 2px;
         }
-    }
+	}
+.multiselect__option--selected{
+	display: none;
+}
 
 .button-text{
     font-size: 14px;
